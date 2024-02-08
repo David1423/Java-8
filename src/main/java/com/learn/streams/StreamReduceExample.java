@@ -8,12 +8,12 @@ import java.util.List;
 import java.util.Optional;
 
 public class StreamReduceExample {
-//reduce() of streams is used to reduce the contents of the stream to a single value
+//reduce() method of streams is used to reduce the contents of the stream to a single value
 
     public static int performMultiplication(List<Integer> integer){
         return integer.stream()
                 .reduce(1,(a,b)->a*b);
-        //can also use this "reduce((a,b)->a*b)" without identity which returns Optional<>
+        //can also use this overloaded method "reduce((a,b)->a*b)" without identity which returns Optional<>
 
         // Initial value is 1(first param), => a=1,b=1 => 1*1=1, now a = 1, b=3 => 1*3 = 3 and so on.
         //  on the first iteration it takes the identity value for a and first element into b i.e. 1=> a=1(identity),b=1(from list)
@@ -45,7 +45,8 @@ public class StreamReduceExample {
             System.out.println(result.get());
         }
 
-        Optional<Student> result1 = getHighestGPAStudent();
+
+    Optional<Student> result1 = getHighestGPAStudent();
         if(result1.isPresent()){
             System.out.println(result1.get());
         }
